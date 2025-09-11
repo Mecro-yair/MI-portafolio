@@ -139,11 +139,26 @@ nav ul li a:hover::after{ transform: scaleX(1); }
   margin-top: 22px; font-size:42px; font-family:'Righteous'; letter-spacing:.4px;
   text-shadow: 0 0 18px rgba(255,45,161,.45), 0 0 28px rgba(0,229,255,.35);
 }
-.inicio .contenido-banner h2{
-  font-size:15px; font-weight:500; color:var(--text-dim); margin-top:8px;
-  white-space:nowrap; overflow:hidden; border-right:2px solid var(--primary); width:0;
-  animation: typing 3.6s steps(34,end) .6s both alternate infinite, caret .9s steps(1,end) infinite;
+/* TIP: ajusta --typing-chars si cambias el texto (incluye espacios) */
+:root { --typing-chars: 37; } /* cambia 37 si tu texto tiene otro número de caracteres */
+
+.inicio .contenido-banner h2 {
+  font-size: 15px;         
+  font-weight: 500;        
+  color: var(--text-dim);  
+  margin-top: 8px;
+
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  box-sizing: border-box;
+  width: 0ch;
+
+  animation: typing 4s steps(30,end) .6s infinite alternate,
+             caret .8s steps(1,end) infinite;
 }
+
 .inicio .contenido-banner .redes{ margin-top:18px; }
 .inicio .contenido-banner .redes a{
   color:#fff; display:inline-block; text-decoration:none; width:46px; height:46px; line-height:46px;
@@ -264,16 +279,24 @@ a.button {
   background:transparent;
   border:2px solid rgba(255,255,255,.28);
   color:#fff;
-  padding:10px 22px;
+  padding:12px 24px;
   border-radius:999px;
-  display:inline-flex;
-  gap:10px;
+  display:inline-flex;       /* 👈 texto + ícono alineados */
   align-items:center;
+  justify-content:center;    /* 👈 centrado horizontal */
+  gap:10px;                  /* espacio entre texto e ícono */
   font-weight:700;
+  font-size:16px;
   transition: all .28s ease;
   position:relative;
   overflow:hidden;
-  text-decoration:none; /* solo afecta a <a> */
+  text-decoration:none;      /* solo afecta a <a> */
+}
+
+button i,
+a.button i {
+  font-size:18px;            /* tamaño uniforme del ícono */
+  line-height:0;             /* evita desajuste vertical */
 }
 
 button .overlay,
@@ -296,6 +319,8 @@ button:hover .overlay,
 a.button:hover .overlay {
   inset:0 0 0 0;
 }
+
+
 
 /* -------------------------------------------------
    PROYECTOS (reemplaza SKILLS)
@@ -606,12 +631,8 @@ footer .arriba{ position:absolute; left:50%; transform:translateX(-50%); top:-25
   margin-bottom: 14px;
 }
 
-
 /* -------------------------------------------------
-   RESPONSIVE
-------------------------------------------------- */
-/* -------------------------------------------------
-   RESPONSIVE
+   RESPONSIVE (reemplaza tus media queries previas)
 ------------------------------------------------- */
 @media screen and (max-width:980px){
   /* NAV */
@@ -664,7 +685,9 @@ footer .arriba{ position:absolute; left:50%; transform:translateX(-50%); top:-25
   .skills .fila, 
   .curriculum .fila, 
   .contacto .fila { 
-    display:block; 
+    display:flex;
+    flex-direction:column;   /* apilados */
+    gap:24px;                /* separación entre col */
   }
 
   .sobremi .fila .col, 
@@ -672,6 +695,12 @@ footer .arriba{ position:absolute; left:50%; transform:translateX(-50%); top:-25
   .curriculum .fila .col, 
   .contacto .fila .col { 
     width:100%; 
+  }
+
+  /* botón dentro de Datos Personales */
+  .sobremi .fila .col button {
+    margin-top:16px;
+    align-self:flex-start;
   }
 
   .contenido-banner { 
@@ -687,33 +716,139 @@ footer .arriba{ position:absolute; left:50%; transform:translateX(-50%); top:-25
   .profile-card .izquierda { 
     flex:0 0 auto; 
   }
+
+  /* Texto animado en tablets y móviles: misma configuración que en desktop,
+     pero con tamaño de fuente responsivo. Se escribe 1 vez y se queda. */
+  .inicio .contenido-banner h2 {
+      font-size: clamp(16px, 2.2vw, 20px);
+      text-align: center;
+      white-space: nowrap;          /* evita saltos */
+      overflow: hidden;             /* recorta durante la animación */
+      border-right: 2px solid var(--primary);
+
+      /* claves para que la animación mida correctamente en todos los navegadores */
+      display: inline-block;        /* importante */
+      box-sizing: content-box;      /* border-right no afecta al ancho medido */
+      width: 0ch;                   /* comienza cerrado (medido en caracteres) */
+
+      /* escribe una vez (normal forwards), luego cursor parpadea infinitamente */
+      animation:
+        typing 3.6s steps(35,end) .6s both normal forwards,
+        caret  .9s steps(1,end)         .6s infinite;
+  }
 }
 
+/* -------------------------------------------------
+   TABLETS (701px a 980px) → 2 columnas
+------------------------------------------------- */
+@media screen and (max-width:980px) and (min-width:701px){
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .galeria .proyecto {
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------------------------------
+   MÓVILES (≤700px) → 1 columna + ajustes extra
+------------------------------------------------- */
 @media screen and (max-width:700px){
   .galeria { 
-    flex-direction:column; 
-    gap:14px; 
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .galeria .proyecto {
+    aspect-ratio: 16 / 9;
+    width: 92%;
+    max-width: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .galeria .proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .contenedor-proyectos { 
     grid-template-columns: 1fr; 
   }
+
+  /* reutilizamos la misma animación (un solo comportamiento consistente) */
+  .inicio .contenido-banner h2 {
+      font-size: clamp(14px, 4vw, 18px);
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--primary);
+
+      display: inline-block;
+      box-sizing: content-box;
+      width: 0ch;
+
+      animation:
+        typing 3.6s steps(35,end) .6s both normal forwards,
+        caret  .9s steps(1,end)         .6s infinite;
+  }
+
+  /* más separación entre columnas en móvil */
+  .sobremi .fila {
+    gap:32px;
+  }
+
+  /* botón full width y centrado */
+  .sobremi .fila .col button,
+  button,
+  a.button {
+    width:100%;
+    justify-content:center;
+    font-size:18px;
+    padding:14px;
+    align-self:center;
+  }
 }
 
-
 /* -------------------------------------------------
-   ACCESIBILIDAD: REDUCIR MOVIMIENTO
+   KEYFRAMES (versión actualizada)
 ------------------------------------------------- */
-@media (prefers-reduced-motion: reduce){
-  *{ animation:none !important; transition:none !important; scroll-behavior: auto !important; }
+@keyframes borderGlow {
+  to { transform: rotate(360deg); }
 }
 
-/* -------------------------------------------------
-   KEYFRAMES
-------------------------------------------------- */
-@keyframes borderGlow{ to{ transform: rotate(360deg); } }
-@keyframes float{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
-@keyframes fadeInDown{ from{ opacity:0; transform: translateY(-18px); } to{ opacity:1; transform: translateY(0); } }
-@keyframes fadeInUp{ from{ opacity:0; transform: translateY(18px); } to{ opacity:1; transform: translateY(0); } }
-@keyframes typing{ from{ width:0; } to{ width:100%; } }
-@keyframes caret{ 50%{ border-color: transparent; } }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+
+@keyframes fadeInDown {
+  from { opacity:0; transform: translateY(-18px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(18px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* KEYFRAMES */
+@keyframes typing {
+  from { width: 0ch; }
+  to   { width: 30ch; } /* longitud exacta */
+}
+
+@keyframes caret {
+  50% { border-color: transparent; }
+}
+

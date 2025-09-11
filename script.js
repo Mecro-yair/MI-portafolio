@@ -1,34 +1,28 @@
-let menuVisible = false;
-
-// Función que oculta o muestra el menú
+// === MENÚ RESPONSIVE ===
 function mostrarOcultarMenu() {
-    if (menuVisible) {
-        document.getElementById("nav").classList = "";
-        menuVisible = false;
-    } else {
-        document.getElementById("nav").classList = "responsive";
-        menuVisible = true;
-    }
+    let nav = document.getElementById("nav");
+    nav.classList.toggle("responsive"); // añade o quita la clase sin borrar las demás
 }
 
 function seleccionar() {
     // Oculto el menú una vez que selecciono una opción
-    document.getElementById("nav").classList = "";
-    menuVisible = false;
+    document.getElementById("nav").classList.remove("responsive");
 }
 
-// === Función que aplica las animaciones de las habilidades ===
+// === ANIMACIÓN DE HABILIDADES ===
 function efectoHabilidades() {
     let skills = document.getElementById("skills");
+    if (!skills) return; // evita errores si no existe la sección
+
     let distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
     if (distancia_skills >= 300) {
         let habilidades = document.querySelectorAll(".skill .progreso");
-        
+
         // Valores finales de tus skills (ajústalos si cambias algo)
         let porcentajes = [75, 89, 95, 81, 55, 80, 70, 99, 65, 94];
 
         habilidades.forEach((barra, i) => {
-            if (!barra.classList.contains("animado")) { // evita reiniciar la animación en cada scroll
+            if (!barra.classList.contains("animado")) { 
                 barra.classList.add("animado");
 
                 let valorFinal = porcentajes[i];
@@ -40,20 +34,18 @@ function efectoHabilidades() {
                         ancho++;
                         barra.style.width = ancho + "%";
 
-                        // si no existe el span, lo creamos
+                        // Crear el span solo si no existe
                         if (!barra.querySelector("span")) {
                             let span = document.createElement("span");
                             barra.appendChild(span);
                         }
                         barra.querySelector("span").innerText = ancho + "%";
                     }
-                }, 15); // velocidad de la animación
+                }, 15); 
             }
         });
     }
 }
 
-// Detecto el scrolling para aplicar la animación de las barras
-window.onscroll = function () {
-    efectoHabilidades();
-};
+// Detecto el scroll para aplicar la animación
+window.addEventListener("scroll", efectoHabilidades);

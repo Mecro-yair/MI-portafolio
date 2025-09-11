@@ -11,19 +11,22 @@
     <!-- HEADER -->
     <div class="contenedor-header">
         <header>
-            <div class="logo">
-                <a href="index.html">Danny</a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html#inicio">INICIO</a></li>
-                    <li><a href="index.html#sobremi">SOBRE MI</a></li>
-                    <li><a href="index.html#proyectos">PROYECTOS</a></li>
-                    <li><a href="index.html#curriculum">CURRICULUM</a></li>
-                    <li><a href="index.html#portfolio">PORTFOLIO</a></li>
-                    <li><a href="index.html#contacto">CONTACTO</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <a href="#">Danny</a>
+        </div>
+        <nav id="nav">
+        <ul>
+            <li><a href="index.html#inicio" onclick="seleccionar()">INICIO</a></li>
+            <li><a href="index.html#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+            <li><a href="index.html#proyectos" onclick="seleccionar()">PROYECTOS</a></li>
+            <li><a href="index.html#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+            <li><a href="index.html#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+            <li><a href="index.html#contacto" onclick="seleccionar()">CONTACTO</a></li>
+        </ul>
+        </nav>
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
         </header>
     </div>
 
@@ -33,7 +36,7 @@
             <h2>Proyectos Detallados</h2>
 
             <!-- Proyecto 1 -->
-            <div class="item">
+            <div class="item" id="p1">
                 <h3>Automatización de un Proceso Empresarial</h3>
                 <p>Este proyecto se enfoca en la automatización de tareas repetitivas dentro de una empresa, utilizando scripts y macros para optimizar tiempos y reducir errores humanos.</p>
                 <h4>Capturas:</h4>
@@ -54,7 +57,7 @@
             </div>
 
             <!-- Proyecto 2 -->
-            <div class="item">
+            <div class="item"  id="p2">
                 <h3>Programa de Automatización Personal</h3>
                 <p>Este programa permite automatizar tareas cotidianas en la computadora, como renombrar archivos, mover carpetas y generar reportes automáticos.</p>
                 <h4>Capturas:</h4>
@@ -75,7 +78,7 @@
             </div>
 
             <!-- Proyecto 3 -->
-            <div class="item">
+            <div class="item" id="p3">
                 <h3>Calculadora Científica en C++</h3>
                 <p>Proyecto de consola en C++ que realiza cálculos matemáticos avanzados, incluyendo funciones trigonométricas, algebraicas y estadísticas.</p>
                 <h4>Capturas:</h4>
@@ -111,5 +114,6 @@
             <a href="#"><i class="fa-solid fa-rss"></i></a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
