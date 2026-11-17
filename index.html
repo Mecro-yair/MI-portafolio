@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,10 @@
   <title>Portfolio - Danny Yair Luque Pari</title>
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,18 +21,24 @@
       <div class="logo">
         <a href="#">Danny</a>
       </div>
-      <nav id="nav">
-        <ul>
-          <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-          <li><a href="#sobremi" onclick="seleccionar()">SOBRE MÍ</a></li>
-          <li><a href="#proyectos" onclick="seleccionar()">PROYECTOS</a></li>
-          <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-          <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-          <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-        </ul>
-      </nav>
-      <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      <div class="acciones-header">
+        <nav id="nav">
+          <ul>
+            <li><a href="#inicio" onclick="seleccionar()" data-i18n="nav.home">INICIO</a></li>
+            <li><a href="#sobremi" onclick="seleccionar()" data-i18n="nav.about">SOBRE MÍ</a></li>
+            <li><a href="#proyectos" onclick="seleccionar()" data-i18n="nav.projects">PROYECTOS</a></li>
+            <li><a href="#curriculum" onclick="seleccionar()" data-i18n="nav.resume">CURRICULUM</a></li>
+            <li><a href="#portfolio" onclick="seleccionar()" data-i18n="nav.portfolio">PORTFOLIO</a></li>
+            <li><a href="#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
+          </ul>
+        </nav>
+        <label class="idioma">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <select id="selector-idioma" data-i18n-aria="lang.label" aria-label="Language"></select>
+        </label>
+        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </div>
       </div>
     </header>
   </div>
@@ -41,10 +47,10 @@
   <section id="inicio" class="inicio">
     <div class="contenido-banner">
       <div class="contenedor-img">
-        <img src="img/hero.png" alt="Foto de Danny Yair Luque Pari">
+        <img src="img/hero.png" alt="Foto de Danny Yair Luque Pari" data-i18n-alt="hero.photo">
       </div>
       <h1>DANNY YAIR LUQUE PARI</h1>
-      <h2>Ingeniero en Informática y Sistemas</h2>
+      <h2 data-i18n="hero.subtitle">Ingeniero en Informática y Sistemas</h2>
       <div class="redes">
         <a href="https://github.com/Mecro-yair" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/danny-yair-luque-pari-548160356/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -55,39 +61,39 @@
   <!-- SOBRE MI -->
   <section id="sobremi" class="sobremi">
     <div class="contenido-seccion">
-      <h2>Sobre Mí</h2>
-<p><span>Hola, soy Danny Yair Luque Pari.</span> Tengo 22 años y culminé mis estudios en la I.E. Emblemática Coronel Bolognesi. Actualmente curso el 6.º ciclo de la carrera de Ingeniería en Informática y Sistemas en la Universidad Nacional Jorge Basadre Grohmann (UNJBG). Tengo un gran interés en la programación, especialmente en el desarrollo web, la inteligencia artificial y la ciberseguridad (hacking ético). Mi propósito personal es crear un asistente virtual personalizado que pueda utilizarse a nivel global.</p>
-<p>Me apasionan el fútbol y la música (quena, guitarra y piano). Soy una persona que aprende rápido y se adapta fácilmente a nuevos retos y tecnologías. Tengo conocimientos en Python, desarrollo web (HTML, CSS y JavaScript) y desarrollo de software. Además, cuento con habilidades en trabajo en equipo y comunicación efectiva. Me visualizo como un profesional especializado en desarrollo Full Stack, inteligencia artificial y ciberseguridad.</p>
+      <h2 data-i18n="about.title">Sobre Mí</h2>
+<p data-i18n-html="about.p1"><span>Hola, soy Danny Yair Luque Pari.</span> Tengo 22 años y culminé mis estudios en la I.E. Emblemática Coronel Bolognesi. Actualmente curso el 6.º ciclo de la carrera de Ingeniería en Informática y Sistemas en la Universidad Nacional Jorge Basadre Grohmann (UNJBG). Tengo un gran interés en la programación, especialmente en el desarrollo web, la inteligencia artificial y la ciberseguridad (hacking ético). Mi propósito personal es crear un asistente virtual personalizado que pueda utilizarse a nivel global.</p>
+<p data-i18n="about.p2">Me apasionan el fútbol y la música (quena, guitarra y piano). Soy una persona que aprende rápido y se adapta fácilmente a nuevos retos y tecnologías. Tengo conocimientos en Python, desarrollo web (HTML, CSS y JavaScript) y desarrollo de software. Además, cuento con habilidades en trabajo en equipo y comunicación efectiva. Me visualizo como un profesional especializado en desarrollo Full Stack, inteligencia artificial y ciberseguridad.</p>
 
       <div class="fila">
         <!-- Datos personales -->
         <div class="col">
-          <h3>Datos Personales</h3>
+          <h3 data-i18n="about.personal">Datos Personales</h3>
           <ul>
-            <li><strong>Nombre:</strong> Danny Yair Luque Pari</li>
-            <li><strong>Edad:</strong> 22 años</li>
+            <li><strong data-i18n="label.name">Nombre:</strong> Danny Yair Luque Pari</li>
+            <li><strong data-i18n="label.age">Edad:</strong> <span data-i18n="age.value">22 años</span></li>
             <li><strong>Email:</strong> dluquep@unjbg.edu.pe</li>
-            <li><strong>Ciudad:</strong> Tacna, Perú</li>
-            <li><strong>Universidad:</strong> UNJBG</li>
-            <li><strong>Carrera:</strong> Ingeniería en Informática y Sistemas</li>
+            <li><strong data-i18n="label.city">Ciudad:</strong> <span data-i18n="city.value">Tacna, Perú</span></li>
+            <li><strong data-i18n="label.university">Universidad:</strong> UNJBG</li>
+            <li><strong data-i18n="label.major">Carrera:</strong> <span data-i18n="major.value">Ingeniería en Informática y Sistemas</span></li>
           </ul>
           <a href="cv.pdf" download="CV-Danny-Yair-Luque-Pari.pdf" class="button">
-            Descargar CV <i class="fa-solid fa-download"></i>
+            <span data-i18n="cv.download">Descargar CV</span> <i class="fa-solid fa-download"></i>
             <span class="overlay"></span>
           </a>
         </div>
 
         <!-- Intereses -->
         <div class="col">
-          <h3>Intereses</h3>
+          <h3 data-i18n="about.interests">Intereses</h3>
           <div class="contenedor-intereses">
-            <div class="interes"><i class="fa-solid fa-code"></i><span>PROGRAMACIÓN</span></div>
-            <div class="interes"><i class="fa-solid fa-robot"></i><span>IA</span></div>
-            <div class="interes"><i class="fa-solid fa-shield-halved"></i><span>CIBERSEGURIDAD</span></div>
-            <div class="interes"><i class="fa-solid fa-futbol"></i><span>FÚTBOL</span></div>
-            <div class="interes"><i class="fa-solid fa-music"></i><span>MÚSICA</span></div>
-            <div class="interes"><i class="fa-solid fa-guitar"></i><span>INSTRUMENTOS</span></div>
-            <div class="interes"><i class="fa-solid fa-gamepad"></i><span>GAME</span></div>
+            <div class="interes"><i class="fa-solid fa-code"></i><span data-i18n="int.programming">Programación</span></div>
+            <div class="interes"><i class="fa-solid fa-robot"></i><span data-i18n="int.ai">IA</span></div>
+            <div class="interes"><i class="fa-solid fa-shield-halved"></i><span data-i18n="int.cyber">Ciberseguridad</span></div>
+            <div class="interes"><i class="fa-solid fa-futbol"></i><span data-i18n="int.football">Fútbol</span></div>
+            <div class="interes"><i class="fa-solid fa-music"></i><span data-i18n="int.music">Música</span></div>
+            <div class="interes"><i class="fa-solid fa-guitar"></i><span data-i18n="int.instruments">Instrumentos</span></div>
+            <div class="interes"><i class="fa-solid fa-gamepad"></i><span data-i18n="int.games">Videojuegos</span></div>
           </div>
         </div>
       </div> <!-- cierre fila -->
@@ -97,13 +103,13 @@
   <!-- PROYECTOS -->
   <section id="proyectos" class="proyectos">
     <div class="contenido-seccion">
-      <h2>Proyectos</h2>
+      <h2 data-i18n="projects.title">Proyectos</h2>
       <div class="contenedor-proyectos">
-        <div class="proyecto"><a href="proyecto-detalle.html#p1"><h3>Automatización Empresarial</h3><p>Optimización de tareas repetitivas. (En proceso)</p><span class="lenguaje">Python</span></a></div>
-        <div class="proyecto"><a href="proyecto-detalle.html#p2"><h3>Programa Personal</h3><p>Automatiza tareas cotidianas. (En proceso)</p><span class="lenguaje">Python / Tkinter</span></a></div>
-        <div class="proyecto"><a href="proyecto-detalle.html#p3"><h3>Calculadora Científica</h3><p>Funciones trigonométricas y algebraicas. (En proceso)</p><span class="lenguaje">C++</span></a></div>
-        <div class="proyecto"><a href="proyecto-detalle.html#p4"><h3>Portfolio Web</h3><p>Sitio web personal. (En proceso)</p><span class="lenguaje">HTML / CSS / JS</span></a></div>
-        <div class="proyecto"><a href="proyecto-detalle.html#p5"><h3>Reconocimiento Facial</h3><p>Detección de rostros con OpenCV. (En proceso)</p><span class="lenguaje">IA</span></a></div>
+        <div class="proyecto"><a href="proyecto-detalle.html#p1"><h3 data-i18n="p1.title">Automatización Empresarial</h3><p data-i18n="p1.desc">Optimización de tareas repetitivas. (En proceso)</p><span class="lenguaje">Python</span></a></div>
+        <div class="proyecto"><a href="proyecto-detalle.html#p2"><h3 data-i18n="p2.title">Programa Personal</h3><p data-i18n="p2.desc">Automatiza tareas cotidianas. (En proceso)</p><span class="lenguaje">Python / Tkinter</span></a></div>
+        <div class="proyecto"><a href="proyecto-detalle.html#p3"><h3 data-i18n="p3.title">Calculadora Científica</h3><p data-i18n="p3.desc">Funciones trigonométricas y algebraicas. (En proceso)</p><span class="lenguaje">C++</span></a></div>
+        <div class="proyecto"><a href="proyecto-detalle.html#p4"><h3 data-i18n="p4.title">Portfolio Web</h3><p data-i18n="p4.desc">Sitio web personal. (En proceso)</p><span class="lenguaje">HTML / CSS / JS</span></a></div>
+        <div class="proyecto"><a href="proyecto-detalle.html#p5"><h3 data-i18n="p5.title">Reconocimiento Facial</h3><p data-i18n="p5.desc">Detección de rostros con OpenCV. (En proceso)</p><span class="lenguaje" data-i18n="int.ai">IA</span></a></div>
       </div>
     </div>
   </section>
@@ -111,33 +117,33 @@
   <!-- CURRICULUM -->
   <section id="curriculum" class="curriculum">
     <div class="contenido-seccion">
-      <h2>Curriculum</h2>
+      <h2 data-i18n="resume.title">Curriculum</h2>
       <div class="fila">
         <div class="col izquierda">
-          <h3>Educación</h3>
+          <h3 data-i18n="resume.education">Educación</h3>
           <div class="item izq">
-            <h4>Ingeniería en Informática y Sistemas</h4>
+            <h4 data-i18n="major.value">Ingeniería en Informática y Sistemas</h4>
             <span class="casa">UNJBG</span>
-            <span class="fecha">2024 - Actualidad</span>
-            <p>6.º ciclo, con interés en desarrollo web, IA y ciberseguridad.</p>
+            <span class="fecha">2024 - <span data-i18n="resume.present">Actualidad</span></span>
+            <p data-i18n="edu1.desc">6.º ciclo, con interés en desarrollo web, IA y ciberseguridad.</p>
             <div class="conectori"><div class="circuloi"></div></div>
           </div>
           <div class="item izq">
-            <h4>Educación Básica Regular</h4>
+            <h4 data-i18n="edu2.title">Educación Básica Regular</h4>
             <span class="casa">I.E. Emblemática Coronel Bolognesi</span>
             <span class="fecha">2010 - 2021</span>
-            <p>Formación escolar con énfasis en ciencias y tecnología.</p>
+            <p data-i18n="edu2.desc">Formación escolar con énfasis en ciencias y tecnología.</p>
             <div class="conectori"><div class="circuloi"></div></div>
           </div>
         </div>
 
         <div class="col derecha">
-          <h3>Experiencia</h3>
+          <h3 data-i18n="resume.experience">Experiencia</h3>
           <div class="item der">
-            <h4>Proyectos Personales</h4>
-            <span class="casa">Desarrollo independiente</span>
-            <span class="fecha">2024 - Actualidad</span>
-            <p>Proyectos en Python, C++ y web aplicados a automatización, IA y desarrollo.</p>
+            <h4 data-i18n="exp1.title">Proyectos Personales</h4>
+            <span class="casa" data-i18n="exp1.place">Desarrollo independiente</span>
+            <span class="fecha">2024 - <span data-i18n="resume.present">Actualidad</span></span>
+            <p data-i18n="exp1.desc">Proyectos en Python, C++ y web aplicados a automatización, IA y desarrollo.</p>
             <div class="conectord"><div class="circulod"></div></div>
           </div>
         </div>
@@ -148,10 +154,10 @@
   <!-- PORTFOLIO -->
   <section id="portfolio" class="portfolio">
     <div class="contenido-seccion">
-      <h2>Portfolio</h2>
+      <h2 data-i18n="portfolio.title">Portfolio</h2>
       <div class="galeria">
-        <div class="proyecto"><img src="img/p1.jpg" alt="Proyecto de fotografía 1"><div class="overlay"><h3>Diseño Creativo</h3><p>Fotografía</p></div></div>
-        <div class="proyecto"><img src="img/p2.jpg" alt="Proyecto de fotografía 2"><div class="overlay"><h3>Diseño Creativo</h3><p>Fotografía</p></div></div>
+        <div class="proyecto"><img src="img/p1.jpg" alt="Proyecto de fotografía 1"><div class="overlay"><h3 data-i18n="gallery.title">Diseño Creativo</h3><p data-i18n="gallery.sub">Fotografía</p></div></div>
+        <div class="proyecto"><img src="img/p2.jpg" alt="Proyecto de fotografía 2"><div class="overlay"><h3 data-i18n="gallery.title">Diseño Creativo</h3><p data-i18n="gallery.sub">Fotografía</p></div></div>
       </div>
     </div>
   </section>
@@ -159,31 +165,31 @@
   <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <div class="contenido-seccion">
-      <h2>Contacto</h2>
+      <h2 data-i18n="contact.title">Contacto</h2>
       <div class="fila">
         <!-- Formulario -->
         <div class="col">
           <form id="form-contacto" action="mailto:dluquep@unjbg.edu.pe" method="post">
-            <input type="text" name="nombre" placeholder="Tu Nombre" required>
-            <input type="text" name="telefono" placeholder="Número telefónico">
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <input type="text" name="tema" placeholder="Tema">
-            <textarea name="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+            <input type="text" name="nombre" placeholder="Tu Nombre" data-i18n-placeholder="ph.name" required>
+            <input type="text" name="telefono" placeholder="Número telefónico" data-i18n-placeholder="ph.phone">
+            <input type="email" name="email" placeholder="Correo electrónico" data-i18n-placeholder="ph.email" required>
+            <input type="text" name="tema" placeholder="Tema" data-i18n-placeholder="ph.subject">
+            <textarea name="mensaje" cols="30" rows="10" placeholder="Mensaje" data-i18n-placeholder="ph.message" required></textarea>
             <button type="submit">
-              Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="contact.send">Enviar Mensaje</span> <i class="fa-solid fa-paper-plane"></i>
               <span class="overlay"></span>
             </button>
           </form>
         </div>
         <!-- Mapa -->
         <div class="col">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121409.93335779382!2d-70.33005282315527!3d-18.02239951902419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915acf5e5e369a43%3A0x11f0aad4a80a8517!2sTacna!5e0!3m2!1ses-419!2spe!4v1757290947888!5m2!1ses-419!2spe" 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121409.93335779382!2d-70.33005282315527!3d-18.02239951902419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915acf5e5e369a43%3A0x11f0aad4a80a8517!2sTacna!5e0!3m2!1ses-419!2spe!4v1757290947888!5m2!1ses-419!2spe"
                   allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="info">
             <ul>
-              <li><i class="fa-solid fa-location-dot"></i> Tacna, Perú</li>
-              <li><i class="fa-solid fa-mobile-screen"></i> Llamar: +51 932 183 351</li>
-              <li><i class="fa-solid fa-envelope"></i> Email: dluquep@unjbg.edu.pe</li>
+              <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="city.value">Tacna, Perú</span></li>
+              <li><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="contact.call">Llamar:</span> +51 932 183 351</li>
+              <li><i class="fa-solid fa-envelope"></i> <span data-i18n="contact.email">Email:</span> dluquep@unjbg.edu.pe</li>
             </ul>
           </div>
         </div>
@@ -201,6 +207,7 @@
   </footer>
 
   <!-- JS -->
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

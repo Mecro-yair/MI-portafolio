@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" data-i18n-title="detail.doc">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +14,24 @@
         <div class="logo">
             <a href="index.html">Danny</a>
         </div>
-        <nav id="nav">
-        <ul>
-            <li><a href="index.html#inicio" onclick="seleccionar()">INICIO</a></li>
-            <li><a href="index.html#sobremi" onclick="seleccionar()">SOBRE MÍ</a></li>
-            <li><a href="index.html#proyectos" onclick="seleccionar()">PROYECTOS</a></li>
-            <li><a href="index.html#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-            <li><a href="index.html#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-            <li><a href="index.html#contacto" onclick="seleccionar()">CONTACTO</a></li>
-        </ul>
-        </nav>
-        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-            <i class="fa-solid fa-bars"></i>
+        <div class="acciones-header">
+            <nav id="nav">
+            <ul>
+                <li><a href="index.html#inicio" onclick="seleccionar()" data-i18n="nav.home">INICIO</a></li>
+                <li><a href="index.html#sobremi" onclick="seleccionar()" data-i18n="nav.about">SOBRE MÍ</a></li>
+                <li><a href="index.html#proyectos" onclick="seleccionar()" data-i18n="nav.projects">PROYECTOS</a></li>
+                <li><a href="index.html#curriculum" onclick="seleccionar()" data-i18n="nav.resume">CURRICULUM</a></li>
+                <li><a href="index.html#portfolio" onclick="seleccionar()" data-i18n="nav.portfolio">PORTFOLIO</a></li>
+                <li><a href="index.html#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
+            </ul>
+            </nav>
+            <label class="idioma">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                <select id="selector-idioma" data-i18n-aria="lang.label" aria-label="Language"></select>
+            </label>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
         </header>
     </div>
@@ -33,13 +39,13 @@
     <!-- DETALLE DEL PROYECTO -->
     <section class="proyectos" style="padding-top:140px;">
         <div class="contenido-seccion">
-            <h2>Proyectos Detallados</h2>
+            <h2 data-i18n="detail.heading">Proyectos Detallados</h2>
 
             <!-- Proyecto 1 -->
             <div class="item" id="p1">
-                <h3>Automatización de un Proceso Empresarial</h3>
-                <p>Este proyecto se enfoca en la automatización de tareas repetitivas dentro de una empresa, utilizando scripts y macros para optimizar tiempos y reducir errores humanos.</p>
-                <h4>Capturas:</h4>
+                <h3 data-i18n="d1.title">Automatización de un Proceso Empresarial</h3>
+                <p data-i18n="d1.desc">Este proyecto se enfoca en la automatización de tareas repetitivas dentro de una empresa, utilizando scripts y macros para optimizar tiempos y reducir errores humanos.</p>
+                <h4 data-i18n="detail.shots">Capturas:</h4>
                 <div class="galeria">
                     <div class="proyecto">
                         <img src="img/p1.jpg" alt="Captura 1">
@@ -48,19 +54,19 @@
                         <img src="img/p2.jpg" alt="Captura 2">
                     </div>
                 </div>
-                <h4>Tecnologías usadas:</h4>
-                <p>Python, Excel, Automatización de procesos</p>
+                <h4 data-i18n="detail.tech">Tecnologías usadas:</h4>
+                <p data-i18n="d1.tech">Python, Excel, Automatización de procesos</p>
                 <a href="index.html#proyectos" class="button">
-                ← Volver a Proyectos
+                <span data-i18n="detail.back">← Volver a Proyectos</span>
                 <span class="overlay"></span>
                 </a>
             </div>
 
             <!-- Proyecto 2 -->
             <div class="item"  id="p2">
-                <h3>Programa de Automatización Personal</h3>
-                <p>Este programa permite automatizar tareas cotidianas en la computadora, como renombrar archivos, mover carpetas y generar reportes automáticos.</p>
-                <h4>Capturas:</h4>
+                <h3 data-i18n="d2.title">Programa de Automatización Personal</h3>
+                <p data-i18n="d2.desc">Este programa permite automatizar tareas cotidianas en la computadora, como renombrar archivos, mover carpetas y generar reportes automáticos.</p>
+                <h4 data-i18n="detail.shots">Capturas:</h4>
                 <div class="galeria">
                     <div class="proyecto">
                         <img src="img/p3.jpg" alt="Captura 1">
@@ -69,19 +75,19 @@
                         <img src="img/p4.jpg" alt="Captura 2">
                     </div>
                 </div>
-                <h4>Tecnologías usadas:</h4>
-                <p>Python, Tkinter, Automatización de tareas</p>
+                <h4 data-i18n="detail.tech">Tecnologías usadas:</h4>
+                <p data-i18n="d2.tech">Python, Tkinter, Automatización de tareas</p>
                 <a href="index.html#proyectos" class="button">
-                ← Volver a Proyectos
+                <span data-i18n="detail.back">← Volver a Proyectos</span>
                 <span class="overlay"></span>
                 </a>
             </div>
 
             <!-- Proyecto 3 -->
             <div class="item" id="p3">
-                <h3>Calculadora Científica en C++</h3>
-                <p>Proyecto de consola en C++ que realiza cálculos matemáticos avanzados, incluyendo funciones trigonométricas, algebraicas y estadísticas.</p>
-                <h4>Capturas:</h4>
+                <h3 data-i18n="d3.title">Calculadora Científica en C++</h3>
+                <p data-i18n="d3.desc">Proyecto de consola en C++ que realiza cálculos matemáticos avanzados, incluyendo funciones trigonométricas, algebraicas y estadísticas.</p>
+                <h4 data-i18n="detail.shots">Capturas:</h4>
                 <div class="galeria">
                     <div class="proyecto">
                         <img src="img/p5.jpg" alt="Captura 1">
@@ -90,10 +96,10 @@
                         <img src="img/p6.jpg" alt="Captura 2">
                     </div>
                 </div>
-                <h4>Tecnologías usadas:</h4>
-                <p>C++, Consola, Funciones matemáticas</p>
+                <h4 data-i18n="detail.tech">Tecnologías usadas:</h4>
+                <p data-i18n="d3.tech">C++, Consola, Funciones matemáticas</p>
                 <a href="index.html#proyectos" class="button">
-                ← Volver a Proyectos
+                <span data-i18n="detail.back">← Volver a Proyectos</span>
                 <span class="overlay"></span>
                 </a>
             </div>
@@ -111,6 +117,7 @@
             <a href="https://www.linkedin.com/in/danny-yair-luque-pari-548160356/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

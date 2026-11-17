@@ -58,11 +58,11 @@ if (formContacto) {
     formContacto.addEventListener("submit", (e) => {
         e.preventDefault();
         const datos = new FormData(formContacto);
-        const asunto = datos.get("tema") || "Contacto desde el portafolio";
+        const asunto = datos.get("tema") || t("mail.subject");
         const cuerpo =
-            "Nombre: " + datos.get("nombre") + "\n" +
-            "Correo: " + datos.get("email") + "\n" +
-            (datos.get("telefono") ? "Teléfono: " + datos.get("telefono") + "\n" : "") +
+            t("mail.name") + ": " + datos.get("nombre") + "\n" +
+            t("mail.email") + ": " + datos.get("email") + "\n" +
+            (datos.get("telefono") ? t("mail.phone") + ": " + datos.get("telefono") + "\n" : "") +
             "\n" + datos.get("mensaje");
         window.location.href = "mailto:dluquep@unjbg.edu.pe" +
             "?subject=" + encodeURIComponent(asunto) +
