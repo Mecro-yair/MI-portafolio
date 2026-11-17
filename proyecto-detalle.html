@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Proyecto</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
 </head>
 <body>
@@ -25,10 +25,13 @@
                 <li><a href="index.html#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
             </ul>
             </nav>
-            <label class="idioma">
-                <i class="fa-solid fa-globe" aria-hidden="true"></i>
-                <select id="selector-idioma" data-i18n-aria="lang.label" aria-label="Language"></select>
-            </label>
+            <div class="idioma">
+          <button type="button" class="idioma-boton" aria-haspopup="listbox" aria-expanded="false">
+            <span class="idioma-actual"></span>
+            <i class="fa-solid fa-chevron-down flecha" aria-hidden="true"></i>
+          </button>
+          <ul class="idioma-menu" role="listbox"></ul>
+        </div>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -117,7 +120,7 @@
             <a href="https://www.linkedin.com/in/danny-yair-luque-pari-548160356/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script src="i18n.js?v=4"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

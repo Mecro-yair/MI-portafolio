@@ -12,6 +12,39 @@ const IDIOMAS = {
 };
 const IDIOMA_POR_DEFECTO = "en";
 
+// Banderas dibujadas en SVG (se ven igual en todos los sistemas; los emojis
+// de banderas no funcionan en Windows). El CSS las recorta en círculo.
+function estrella(cx, cy, r, giro = 0) {
+  const puntos = [];
+  for (let i = 0; i < 10; i++) {
+    const radio = i % 2 === 0 ? r : r * 0.38;
+    const ang = (Math.PI / 5) * i - Math.PI / 2 + giro;
+    puntos.push((cx + radio * Math.cos(ang)).toFixed(2) + "," + (cy + radio * Math.sin(ang)).toFixed(2));
+  }
+  return `<polygon points="${puntos.join(" ")}"/>`;
+}
+
+const BANDERAS = {
+  en: (() => { // Estados Unidos
+    let franjas = "";
+    for (let i = 0; i < 13; i += 2) franjas += `<rect y="${(i * 30 / 13).toFixed(2)}" width="30" height="${(30 / 13).toFixed(2)}"/>`;
+    let puntos = "";
+    for (let f = 0; f < 4; f++) for (let c = 0; c < 4; c++) puntos += `<circle cx="${2 + c * 3.4 + (f % 2) * 1.2}" cy="${2.2 + f * 3.8}" r=".7"/>`;
+    return `<rect width="30" height="30" fill="#fff"/><g fill="#b22234">${franjas}</g>` +
+           `<rect width="15" height="16.2" fill="#3c3b6e"/><g fill="#fff">${puntos}</g>`;
+  })(),
+  es: `<rect width="30" height="30" fill="#c60b1e"/><rect y="7.5" width="30" height="15" fill="#ffc400"/>`,
+  zh: `<rect width="30" height="30" fill="#de2910"/><g fill="#ffde00">` +
+      estrella(9, 10, 5) + estrella(16.5, 4.5, 1.6, .9) + estrella(19.5, 8, 1.6, 1.3) +
+      estrella(19.5, 12.5, 1.6, 1.9) + estrella(16.5, 15.5, 1.6, 2.3) + `</g>`,
+  de: `<rect width="30" height="10" fill="#000"/><rect y="10" width="30" height="10" fill="#dd0000"/><rect y="20" width="30" height="10" fill="#ffce00"/>`,
+  fr: `<rect width="10" height="30" fill="#002395"/><rect x="10" width="10" height="30" fill="#fff"/><rect x="20" width="10" height="30" fill="#ed2939"/>`,
+};
+
+function banderaSVG(codigo) {
+  return `<svg class="bandera" viewBox="0 0 30 30" aria-hidden="true">${BANDERAS[codigo]}</svg>`;
+}
+
 const T = {
   // ---------- Menú ----------
   "nav.home":      { en: "HOME", es: "INICIO", zh: "首页", de: "START", fr: "ACCUEIL" },
@@ -224,23 +257,50 @@ function aplicarIdioma(codigo) {
   const tituloDoc = document.documentElement.dataset.i18nTitle;
   if (tituloDoc) document.title = t(tituloDoc) + " - Danny Yair Luque Pari";
 
-  const selector = document.getElementById("selector-idioma");
-  if (selector) selector.value = codigo;
+  // botón del menú: bandera + código del idioma actual
+  const boton = document.querySelector(".idioma-boton");
+  if (boton) {
+    boton.querySelector(".idioma-actual").innerHTML = banderaSVG(codigo) + `<span>${codigo.toUpperCase()}</span>`;
+    boton.setAttribute("aria-label", t("lang.label") + ": " + IDIOMAS[codigo]);
+  }
+  document.querySelectorAll(".idioma-menu button").forEach(b => {
+    b.setAttribute("aria-selected", b.dataset.lang === codigo);
+  });
 
   reiniciarEfectoEscritura();
 }
 
-// Llena el selector del menú y escucha los cambios
+// Arma el menú desplegable de idiomas
 (function iniciarIdiomas() {
-  const selector = document.getElementById("selector-idioma");
-  if (selector) {
-    selector.innerHTML = Object.entries(IDIOMAS)
-      .map(([codigo, nombre]) => `<option value="${codigo}">${nombre}</option>`)
-      .join("");
-    selector.addEventListener("change", () => {
-      guardarIdioma(selector.value);
-      aplicarIdioma(selector.value);
+  const caja = document.querySelector(".idioma");
+  if (caja) {
+    const boton = caja.querySelector(".idioma-boton");
+    const menu = caja.querySelector(".idioma-menu");
+    menu.innerHTML = Object.entries(IDIOMAS).map(([codigo, nombre]) =>
+      `<li><button type="button" role="option" data-lang="${codigo}" lang="${codigo}">` +
+      `${banderaSVG(codigo)}<span>${nombre}</span><i class="fa-solid fa-check"></i></button></li>`
+    ).join("");
+
+    const abrir = (si) => {
+      caja.classList.toggle("abierto", si);
+      boton.setAttribute("aria-expanded", si);
+    };
+    boton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      abrir(!caja.classList.contains("abierto"));
+      // en celular, cierra el menú de secciones si estaba abierto
+      document.getElementById("nav")?.classList.remove("responsive");
     });
+    menu.addEventListener("click", (e) => {
+      const opcion = e.target.closest("button[data-lang]");
+      if (!opcion) return;
+      guardarIdioma(opcion.dataset.lang);
+      aplicarIdioma(opcion.dataset.lang);
+      abrir(false);
+      boton.focus();
+    });
+    document.addEventListener("click", (e) => { if (!caja.contains(e.target)) abrir(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") abrir(false); });
   }
   aplicarIdioma(leerIdiomaGuardado() || IDIOMA_POR_DEFECTO);
   // al cargar la fuente el ancho del texto cambia un poco

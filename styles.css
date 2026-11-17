@@ -81,23 +81,55 @@ nav ul li a:hover::after{ transform: scaleX(1); }
 /* menú + selector de idioma + botón de celular, alineados a la derecha */
 .acciones-header{ display:flex; align-items:center; gap:10px; }
 
-/* SELECTOR DE IDIOMA */
-.idioma{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:6px 10px; border-radius:12px;
-  border:1px solid rgba(255,255,255,.18);
-  background: rgba(20,26,36,.8);
-  color:var(--text); cursor:pointer;
-  transition: border-color .25s ease, box-shadow .25s ease;
+/* SELECTOR DE IDIOMA (botón con bandera redonda + menú desplegable) */
+.idioma{ position:relative; }
+.bandera{
+  width:22px; height:22px; border-radius:50%; flex:none; display:block;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.18), 0 0 10px rgba(0,229,255,.25);
 }
-.idioma:hover, .idioma:focus-within{ border-color: rgba(0,229,255,.5); box-shadow: 0 0 10px rgba(0,229,255,.25); }
-.idioma i{ color:var(--primary); font-size:15px; }
-.idioma select{
-  appearance:none; -webkit-appearance:none;
-  background:transparent; border:none; outline:none;
-  color:var(--text); font-weight:600; font-size:14px; cursor:pointer;
+.idioma .idioma-boton{
+  display:inline-flex; align-items:center; gap:8px; width:auto;
+  padding:5px 10px 5px 6px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.16); background: rgba(20,26,36,.85);
+  color:var(--text); font-size:14px; font-weight:700; letter-spacing:.5px;
+  box-shadow:none; transform:none; overflow:visible;
 }
-.idioma select option{ background:var(--panel); color:var(--text); }
+.idioma .idioma-boton:hover,
+.idioma.abierto .idioma-boton{
+  transform:none; border-color: rgba(0,229,255,.55);
+  box-shadow: 0 0 14px rgba(0,229,255,.28);
+}
+.idioma-actual{ display:inline-flex; align-items:center; gap:7px; }
+.idioma .flecha{ font-size:11px; line-height:1; color:var(--primary); transition: transform .25s ease; }
+.idioma.abierto .flecha{ transform: rotate(180deg); }
+
+.idioma-menu{
+  position:absolute; right:0; top:calc(100% + 10px); min-width:180px;
+  list-style:none; margin:0; padding:6px;
+  background: rgba(20,26,36,.97); backdrop-filter: blur(8px);
+  border:1px solid var(--stroke); border-radius:14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.5), 0 0 18px rgba(0,229,255,.12);
+  opacity:0; transform: translateY(-6px) scale(.98); transform-origin: top right;
+  pointer-events:none; transition: opacity .2s ease, transform .2s ease;
+  z-index:1000;
+}
+.idioma.abierto .idioma-menu{ opacity:1; transform:none; pointer-events:auto; }
+.idioma-menu li + li{ margin-top:2px; }
+.idioma-menu button{
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:8px 10px; border:none; border-radius:10px; background:transparent;
+  color:var(--text-dim); font-size:15px; font-weight:600; text-align:left;
+  box-shadow:none; transform:none; justify-content:flex-start;
+}
+.idioma-menu button span{ flex:1; }
+.idioma-menu button .fa-check{ font-size:12px; color:var(--primary); opacity:0; }
+.idioma-menu button:hover,
+.idioma-menu button:focus-visible{
+  background: rgba(0,229,255,.08); color:#fff; transform:none; box-shadow:none; outline:none;
+}
+.idioma-menu button[aria-selected="true"]{ color:var(--primary); background: rgba(0,229,255,.06); }
+.idioma-menu button[aria-selected="true"] .fa-check{ opacity:1; }
+.idioma-menu .bandera{ width:24px; height:24px; }
 
 /* responsive trigger */
 .nav-responsive{

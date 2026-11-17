@@ -2,6 +2,7 @@
 function mostrarOcultarMenu() {
     let nav = document.getElementById("nav");
     nav.classList.toggle("responsive"); // añade o quita la clase sin borrar las demás
+    document.querySelector(".idioma")?.classList.remove("abierto"); // cierra el menú de idiomas
 }
 
 function seleccionar() {

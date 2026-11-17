@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <!-- HEADER -->
@@ -32,10 +32,13 @@
             <li><a href="#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
           </ul>
         </nav>
-        <label class="idioma">
-          <i class="fa-solid fa-globe" aria-hidden="true"></i>
-          <select id="selector-idioma" data-i18n-aria="lang.label" aria-label="Language"></select>
-        </label>
+        <div class="idioma">
+          <button type="button" class="idioma-boton" aria-haspopup="listbox" aria-expanded="false">
+            <span class="idioma-actual"></span>
+            <i class="fa-solid fa-chevron-down flecha" aria-hidden="true"></i>
+          </button>
+          <ul class="idioma-menu" role="listbox"></ul>
+        </div>
         <div class="nav-responsive" onclick="mostrarOcultarMenu()">
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </div>
@@ -207,7 +210,7 @@
   </footer>
 
   <!-- JS -->
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="i18n.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
