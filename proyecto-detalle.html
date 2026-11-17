@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Proyecto</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <!-- modo de daltonismo guardado, antes de dibujar la página -->
+  <script>try{var v=localStorage.getItem("vision");if(v&&v!=="normal")document.documentElement.dataset.vision=v}catch(e){}</script>
+  <link rel="stylesheet" href="styles.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
 </head>
 <body>
@@ -25,12 +27,18 @@
                 <li><a href="index.html#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
             </ul>
             </nav>
-            <div class="idioma">
-          <button type="button" class="idioma-boton" aria-haspopup="listbox" aria-expanded="false">
+            <div class="desplegable vision">
+          <button type="button" class="desplegable-boton vision-boton" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="vision.label" aria-label="Color vision">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          </button>
+          <ul class="desplegable-menu vision-menu" role="listbox"></ul>
+        </div>
+        <div class="desplegable idioma">
+          <button type="button" class="desplegable-boton idioma-boton" aria-haspopup="listbox" aria-expanded="false">
             <span class="idioma-actual"></span>
             <i class="fa-solid fa-chevron-down flecha" aria-hidden="true"></i>
           </button>
-          <ul class="idioma-menu" role="listbox"></ul>
+          <ul class="desplegable-menu idioma-menu" role="listbox"></ul>
         </div>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
@@ -120,7 +128,8 @@
             <a href="https://www.linkedin.com/in/danny-yair-luque-pari-548160356/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
-    <script src="i18n.js?v=4"></script>
-    <script src="script.js?v=4"></script>
+    <script src="vision.js?v=5"></script>
+  <script src="i18n.js?v=5"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

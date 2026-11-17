@@ -55,6 +55,14 @@ const T = {
   "nav.contact":   { en: "CONTACT", es: "CONTACTO", zh: "联系", de: "KONTAKT", fr: "CONTACT" },
   "lang.label":    { en: "Language", es: "Idioma", zh: "语言", de: "Sprache", fr: "Langue" },
 
+  // ---------- Visión de colores (daltonismo) ----------
+  "vision.label":  { en: "Color vision", es: "Visión de colores", zh: "色觉模式", de: "Farbsehen", fr: "Vision des couleurs" },
+  "vision.normal": { en: "Default colors", es: "Colores normales", zh: "默认颜色", de: "Standardfarben", fr: "Couleurs par défaut" },
+  "vision.protan": { en: "Protanopia (red)", es: "Protanopía (rojo)", zh: "红色盲", de: "Protanopie (Rot)", fr: "Protanopie (rouge)" },
+  "vision.deutan": { en: "Deuteranopia (green)", es: "Deuteranopía (verde)", zh: "绿色盲", de: "Deuteranopie (Grün)", fr: "Deutéranopie (vert)" },
+  "vision.tritan": { en: "Tritanopia (blue)", es: "Tritanopía (azul)", zh: "蓝色盲", de: "Tritanopie (Blau)", fr: "Tritanopie (bleu)" },
+  "vision.mono":   { en: "High contrast", es: "Alto contraste", zh: "高对比度", de: "Hoher Kontrast", fr: "Contraste élevé" },
+
   // ---------- Portada ----------
   "hero.subtitle": {
     en: "Computer & Systems Engineer",

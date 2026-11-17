@@ -12,7 +12,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=4">
+  <!-- modo de daltonismo guardado, antes de dibujar la página -->
+  <script>try{var v=localStorage.getItem("vision");if(v&&v!=="normal")document.documentElement.dataset.vision=v}catch(e){}</script>
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <!-- HEADER -->
@@ -32,12 +34,18 @@
             <li><a href="#contacto" onclick="seleccionar()" data-i18n="nav.contact">CONTACTO</a></li>
           </ul>
         </nav>
-        <div class="idioma">
-          <button type="button" class="idioma-boton" aria-haspopup="listbox" aria-expanded="false">
+        <div class="desplegable vision">
+          <button type="button" class="desplegable-boton vision-boton" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="vision.label" aria-label="Color vision">
+            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+          </button>
+          <ul class="desplegable-menu vision-menu" role="listbox"></ul>
+        </div>
+        <div class="desplegable idioma">
+          <button type="button" class="desplegable-boton idioma-boton" aria-haspopup="listbox" aria-expanded="false">
             <span class="idioma-actual"></span>
             <i class="fa-solid fa-chevron-down flecha" aria-hidden="true"></i>
           </button>
-          <ul class="idioma-menu" role="listbox"></ul>
+          <ul class="desplegable-menu idioma-menu" role="listbox"></ul>
         </div>
         <div class="nav-responsive" onclick="mostrarOcultarMenu()">
           <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -210,7 +218,8 @@
   </footer>
 
   <!-- JS -->
-  <script src="i18n.js?v=4"></script>
-  <script src="script.js?v=4"></script>
+  <script src="vision.js?v=5"></script>
+  <script src="i18n.js?v=5"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
