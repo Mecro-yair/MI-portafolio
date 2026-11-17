@@ -49,3 +49,24 @@ function efectoHabilidades() {
 
 // Detecto el scroll para aplicar la animación
 window.addEventListener("scroll", efectoHabilidades);
+
+// === FORMULARIO DE CONTACTO ===
+// GitHub Pages no tiene servidor, así que el formulario abre el programa
+// de correo del visitante con el mensaje ya escrito.
+const formContacto = document.getElementById("form-contacto");
+if (formContacto) {
+    formContacto.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const datos = new FormData(formContacto);
+        const asunto = datos.get("tema") || "Contacto desde el portafolio";
+        const cuerpo =
+            "Nombre: " + datos.get("nombre") + "\n" +
+            "Correo: " + datos.get("email") + "\n" +
+            (datos.get("telefono") ? "Teléfono: " + datos.get("telefono") + "\n" : "") +
+            "\n" + datos.get("mensaje");
+        window.location.href = "mailto:dluquep@unjbg.edu.pe" +
+            "?subject=" + encodeURIComponent(asunto) +
+            "&body=" + encodeURIComponent(cuerpo);
+        formContacto.reset();
+    });
+}
