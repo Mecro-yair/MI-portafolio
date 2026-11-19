@@ -131,8 +131,11 @@ const T = {
   },
   "p3.title": { en: "Scientific Calculator", es: "Calculadora Científica", zh: "科学计算器", de: "Wissenschaftlicher Rechner", fr: "Calculatrice scientifique" },
   "p3.desc": {
-    en: "Trigonometric and algebraic functions. (In progress)", es: "Funciones trigonométricas y algebraicas. (En proceso)", zh: "三角函数和代数函数。（进行中）",
-    de: "Trigonometrische und algebraische Funktionen. (In Arbeit)", fr: "Fonctions trigonométriques et algébriques. (En cours)",
+    en: "Expressions, trigonometry, equations, statistics and number bases. (Completed)",
+    es: "Expresiones, trigonometría, ecuaciones, estadística y bases numéricas. (Completado)",
+    zh: "表达式、三角函数、方程、统计和进制转换。（已完成）",
+    de: "Ausdrücke, Trigonometrie, Gleichungen, Statistik und Zahlensysteme. (Fertig)",
+    fr: "Expressions, trigonométrie, équations, statistiques et bases numériques. (Terminé)",
   },
   "p4.title": { en: "Web Portfolio", es: "Portfolio Web", zh: "作品集网站", de: "Web-Portfolio", fr: "Portfolio web" },
   "p4.desc": {
@@ -217,13 +220,13 @@ const T = {
   "d2.tech": { en: "Python, Tkinter, Task automation", es: "Python, Tkinter, Automatización de tareas", zh: "Python、Tkinter、任务自动化", de: "Python, Tkinter, Aufgabenautomatisierung", fr: "Python, Tkinter, Automatisation des tâches" },
   "d3.title": { en: "Scientific Calculator in C++", es: "Calculadora Científica en C++", zh: "C++ 科学计算器", de: "Wissenschaftlicher Rechner in C++", fr: "Calculatrice scientifique en C++" },
   "d3.desc": {
-    en: "A C++ console project that performs advanced math calculations, including trigonometric, algebraic and statistical functions.",
-    es: "Proyecto de consola en C++ que realiza cálculos matemáticos avanzados, incluyendo funciones trigonométricas, algebraicas y estadísticas.",
-    zh: "一个 C++ 控制台项目，可以进行高级数学计算，包括三角函数、代数函数和统计函数。",
-    de: "Ein C++-Konsolenprojekt für fortgeschrittene mathematische Berechnungen, darunter trigonometrische, algebraische und statistische Funktionen.",
-    fr: "Projet console en C++ qui effectue des calculs mathématiques avancés, notamment des fonctions trigonométriques, algébriques et statistiques.",
+    en: "A console scientific calculator written in C++17 without external libraries. It evaluates complete expressions such as 2*sin(30) + sqrt(16)^2 using its own parser (lexical analysis and recursive descent) that respects operator precedence and parentheses. It includes trigonometry in degrees or radians, logarithms, factorials and combinatorics, quadratic equations with complex roots, 2x2 systems (Cramer's rule), statistics (mean, median, mode, variance and standard deviation) and conversion between decimal, binary, octal and hexadecimal. It shows clear error messages and is verified by 108 automated tests.",
+    es: "Calculadora científica de consola escrita en C++17, sin librerías externas. Evalúa expresiones completas como 2*sin(30) + sqrt(16)^2 con un analizador propio (análisis léxico y descenso recursivo) que respeta la precedencia de operadores y los paréntesis. Incluye trigonometría en grados o radianes, logaritmos, factorial y combinatoria, ecuaciones de segundo grado con raíces complejas, sistemas 2x2 (regla de Cramer), estadística (media, mediana, moda, varianza y desviación estándar) y conversión entre decimal, binario, octal y hexadecimal. Muestra mensajes de error claros y está verificada con 108 pruebas automáticas.",
+    zh: "一个用 C++17 编写的控制台科学计算器，不依赖任何外部库。它使用自己编写的解析器（词法分析和递归下降）计算完整的表达式，例如 2*sin(30) + sqrt(16)^2，并遵循运算符优先级和括号。功能包括角度或弧度制的三角函数、对数、阶乘和组合数学、带复数根的一元二次方程、二元一次方程组（克莱姆法则）、统计（平均数、中位数、众数、方差和标准差）以及十进制、二进制、八进制和十六进制之间的转换。它会显示清晰的错误信息，并通过了 108 项自动化测试。",
+    de: "Ein wissenschaftlicher Konsolen-Taschenrechner in C++17 ohne externe Bibliotheken. Er berechnet vollständige Ausdrücke wie 2*sin(30) + sqrt(16)^2 mit einem eigenen Parser (lexikalische Analyse und rekursiver Abstieg), der Operatorrangfolge und Klammern beachtet. Er bietet Trigonometrie in Grad oder Bogenmaß, Logarithmen, Fakultät und Kombinatorik, quadratische Gleichungen mit komplexen Lösungen, 2x2-Gleichungssysteme (Cramersche Regel), Statistik (Mittelwert, Median, Modus, Varianz und Standardabweichung) sowie die Umrechnung zwischen Dezimal-, Binär-, Oktal- und Hexadezimalsystem. Er zeigt verständliche Fehlermeldungen und wird durch 108 automatisierte Tests geprüft.",
+    fr: "Calculatrice scientifique en console écrite en C++17, sans bibliothèque externe. Elle évalue des expressions complètes comme 2*sin(30) + sqrt(16)^2 grâce à son propre analyseur (analyse lexicale et descente récursive) qui respecte la priorité des opérateurs et les parenthèses. Elle propose la trigonométrie en degrés ou en radians, les logarithmes, la factorielle et la combinatoire, les équations du second degré avec racines complexes, les systèmes 2x2 (règle de Cramer), les statistiques (moyenne, médiane, mode, variance et écart type) et la conversion entre décimal, binaire, octal et hexadécimal. Elle affiche des messages d'erreur clairs et est vérifiée par 108 tests automatisés.",
   },
-  "d3.tech": { en: "C++, Console, Math functions", es: "C++, Consola, Funciones matemáticas", zh: "C++、控制台、数学函数", de: "C++, Konsole, Mathematische Funktionen", fr: "C++, Console, Fonctions mathématiques" },
+  "d3.tech": { en: "C++17, g++, Makefile, automated tests", es: "C++17, g++, Makefile, pruebas automáticas", zh: "C++17、g++、Makefile、自动化测试", de: "C++17, g++, Makefile, automatisierte Tests", fr: "C++17, g++, Makefile, tests automatisés" },
 };
 
 // ---------- Lógica ----------
