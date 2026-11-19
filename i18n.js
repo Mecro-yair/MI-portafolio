@@ -116,10 +116,13 @@ const T = {
 
   // ---------- Proyectos ----------
   "projects.title": { en: "Projects", es: "Proyectos", zh: "项目", de: "Projekte", fr: "Projets" },
-  "p1.title": { en: "Business Automation", es: "Automatización Empresarial", zh: "企业自动化", de: "Geschäftsautomatisierung", fr: "Automatisation d'entreprise" },
+  "p1.title": { en: "Sales Report Automation", es: "Automatización de Reportes de Ventas", zh: "销售报告自动化", de: "Automatisierte Verkaufsberichte", fr: "Automatisation des rapports de ventes" },
   "p1.desc": {
-    en: "Optimizing repetitive tasks. (In progress)", es: "Optimización de tareas repetitivas. (En proceso)", zh: "优化重复性任务。（进行中）",
-    de: "Optimierung wiederkehrender Aufgaben. (In Arbeit)", fr: "Optimisation des tâches répétitives. (En cours)",
+    en: "Merges each store's Excel files, cleans errors and builds a report with charts. (Completed)",
+    es: "Une los Excels de cada tienda, limpia errores y genera un reporte con gráficos. (Completado)",
+    zh: "合并各门店的 Excel 文件，清理错误数据并生成带图表的报告。（已完成）",
+    de: "Führt die Excel-Dateien jeder Filiale zusammen, bereinigt Fehler und erstellt einen Bericht mit Diagrammen. (Fertig)",
+    fr: "Fusionne les fichiers Excel de chaque magasin, corrige les erreurs et génère un rapport avec graphiques. (Terminé)",
   },
   "p2.title": { en: "Personal Program", es: "Programa Personal", zh: "个人程序", de: "Persönliches Programm", fr: "Programme personnel" },
   "p2.desc": {
@@ -193,15 +196,16 @@ const T = {
   "detail.shots":   { en: "Screenshots:", es: "Capturas:", zh: "截图：", de: "Screenshots:", fr: "Captures d'écran :" },
   "detail.tech":    { en: "Technologies used:", es: "Tecnologías usadas:", zh: "使用的技术：", de: "Verwendete Technologien:", fr: "Technologies utilisées :" },
   "detail.back":    { en: "← Back to Projects", es: "← Volver a Proyectos", zh: "← 返回项目", de: "← Zurück zu den Projekten", fr: "← Retour aux projets" },
-  "d1.title": { en: "Business Process Automation", es: "Automatización de un Proceso Empresarial", zh: "企业流程自动化", de: "Automatisierung eines Geschäftsprozesses", fr: "Automatisation d'un processus d'entreprise" },
+  "d1.title": { en: "Automatic Sales Report Generator", es: "Generador Automático de Reportes de Ventas", zh: "销售报告自动生成器", de: "Automatischer Verkaufsbericht-Generator", fr: "Générateur automatique de rapports de ventes" },
   "d1.desc": {
-    en: "This project focuses on automating repetitive tasks within a company, using scripts and macros to save time and reduce human error.",
-    es: "Este proyecto se enfoca en la automatización de tareas repetitivas dentro de una empresa, utilizando scripts y macros para optimizar tiempos y reducir errores humanos.",
-    zh: "本项目专注于企业内部重复性任务的自动化，利用脚本和宏来节省时间并减少人为错误。",
-    de: "Dieses Projekt automatisiert wiederkehrende Aufgaben in einem Unternehmen mit Skripten und Makros, um Zeit zu sparen und menschliche Fehler zu reduzieren.",
-    fr: "Ce projet porte sur l'automatisation des tâches répétitives au sein d'une entreprise, à l'aide de scripts et de macros pour gagner du temps et réduire les erreurs humaines.",
+    en: "A Python program that automates a company's monthly sales report. It reads the Excel file from each store, fixes common errors (empty rows, misspelled names, wrong categories, missing data and duplicate sales) and logs every change. Then it calculates revenue, units, average ticket and sales by store, month, product and salesperson, and generates a formatted Excel report with charts. A task that takes hours by hand now takes seconds.",
+    es: "Programa en Python que automatiza el reporte mensual de ventas de una empresa. Lee el Excel de cada tienda, corrige los errores más comunes (filas vacías, nombres mal escritos, categorías equivocadas, datos faltantes y ventas repetidas) y registra cada cambio. Luego calcula ingresos, unidades, ticket promedio y ventas por tienda, mes, producto y vendedor, y genera un reporte en Excel con formato y gráficos. Una tarea de horas pasa a tomar segundos.",
+    zh: "一个用 Python 编写的程序，可自动生成企业的月度销售报告。它读取每家门店的 Excel 文件，修正常见错误（空行、名称拼写错误、类别错误、缺失数据和重复销售）并记录每一处修改。随后计算收入、销量、平均客单价，以及按门店、月份、产品和销售人员的销售情况，并生成带格式和图表的 Excel 报告。原本需要几个小时的工作现在只需几秒钟。",
+    de: "Ein Python-Programm, das den monatlichen Verkaufsbericht eines Unternehmens automatisiert. Es liest die Excel-Datei jeder Filiale, korrigiert typische Fehler (leere Zeilen, falsch geschriebene Namen, falsche Kategorien, fehlende Daten und doppelte Verkäufe) und protokolliert jede Änderung. Anschließend berechnet es Umsatz, Stückzahlen, durchschnittlichen Bon und Verkäufe nach Filiale, Monat, Produkt und Verkäufer und erstellt einen formatierten Excel-Bericht mit Diagrammen. Eine Aufgabe von Stunden dauert jetzt nur Sekunden.",
+    fr: "Programme Python qui automatise le rapport mensuel des ventes d'une entreprise. Il lit le fichier Excel de chaque magasin, corrige les erreurs courantes (lignes vides, noms mal écrits, mauvaises catégories, données manquantes et ventes en double) et enregistre chaque modification. Il calcule ensuite le chiffre d'affaires, les unités, le panier moyen et les ventes par magasin, mois, produit et vendeur, puis génère un rapport Excel mis en forme avec des graphiques. Une tâche de plusieurs heures ne prend plus que quelques secondes.",
   },
-  "d1.tech": { en: "Python, Excel, Process automation", es: "Python, Excel, Automatización de procesos", zh: "Python、Excel、流程自动化", de: "Python, Excel, Prozessautomatisierung", fr: "Python, Excel, Automatisation des processus" },
+  "d1.tech": { en: "Python, pandas, openpyxl, matplotlib, Excel", es: "Python, pandas, openpyxl, matplotlib, Excel", zh: "Python、pandas、openpyxl、matplotlib、Excel", de: "Python, pandas, openpyxl, matplotlib, Excel", fr: "Python, pandas, openpyxl, matplotlib, Excel" },
+  "detail.github": { en: "View code on GitHub", es: "Ver código en GitHub", zh: "在 GitHub 上查看代码", de: "Code auf GitHub ansehen", fr: "Voir le code sur GitHub" },
   "d2.title": { en: "Personal Automation Program", es: "Programa de Automatización Personal", zh: "个人自动化程序", de: "Programm zur persönlichen Automatisierung", fr: "Programme d'automatisation personnelle" },
   "d2.desc": {
     en: "This program automates everyday computer tasks, such as renaming files, moving folders and generating automatic reports.",

@@ -6,7 +6,7 @@
     <title>Detalle de Proyecto</title>
     <!-- modo de daltonismo guardado, antes de dibujar la página -->
   <script>try{var v=localStorage.getItem("vision");if(v&&v!=="normal")document.documentElement.dataset.vision=v}catch(e){}</script>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
 </head>
 <body>
@@ -54,23 +54,29 @@
 
             <!-- Proyecto 1 -->
             <div class="item" id="p1">
-                <h3 data-i18n="d1.title">Automatización de un Proceso Empresarial</h3>
-                <p data-i18n="d1.desc">Este proyecto se enfoca en la automatización de tareas repetitivas dentro de una empresa, utilizando scripts y macros para optimizar tiempos y reducir errores humanos.</p>
+                <h3 data-i18n="d1.title">Generador Automático de Reportes de Ventas</h3>
+                <p data-i18n="d1.desc">Programa en Python que automatiza el reporte mensual de ventas de una empresa. Lee el Excel de cada tienda, corrige los errores más comunes (filas vacías, nombres mal escritos, categorías equivocadas, datos faltantes y ventas repetidas) y registra cada cambio. Luego calcula ingresos, unidades, ticket promedio y ventas por tienda, mes, producto y vendedor, y genera un reporte en Excel con formato y gráficos. Una tarea de horas pasa a tomar segundos.</p>
                 <h4 data-i18n="detail.shots">Capturas:</h4>
                 <div class="galeria">
                     <div class="proyecto">
-                        <img src="img/p1.jpg" alt="Captura 1">
+                        <img src="img/reporte_ventas_mes.png" alt="Gráfico de ingresos por mes y tienda">
                     </div>
                     <div class="proyecto">
-                        <img src="img/p2.jpg" alt="Captura 2">
+                        <img src="img/reporte_ventas_productos.png" alt="Gráfico de ingresos por producto">
                     </div>
                 </div>
                 <h4 data-i18n="detail.tech">Tecnologías usadas:</h4>
-                <p data-i18n="d1.tech">Python, Excel, Automatización de procesos</p>
-                <a href="index.html#proyectos" class="button">
-                <span data-i18n="detail.back">← Volver a Proyectos</span>
-                <span class="overlay"></span>
-                </a>
+                <p data-i18n="d1.tech">Python, pandas, openpyxl, matplotlib, Excel</p>
+                <div class="botones-proyecto">
+                    <a href="https://github.com/Mecro-yair/reportes-ventas" target="_blank" rel="noopener" class="button">
+                    <i class="fa-brands fa-github"></i> <span data-i18n="detail.github">Ver código en GitHub</span>
+                    <span class="overlay"></span>
+                    </a>
+                    <a href="index.html#proyectos" class="button">
+                    <span data-i18n="detail.back">← Volver a Proyectos</span>
+                    <span class="overlay"></span>
+                    </a>
+                </div>
             </div>
 
             <!-- Proyecto 2 -->
@@ -128,8 +134,8 @@
             <a href="https://www.linkedin.com/in/danny-yair-luque-pari-548160356/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
-    <script src="vision.js?v=5"></script>
-  <script src="i18n.js?v=5"></script>
-    <script src="script.js?v=5"></script>
+    <script src="vision.js?v=6"></script>
+  <script src="i18n.js?v=6"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>

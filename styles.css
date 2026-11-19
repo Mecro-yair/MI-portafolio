@@ -966,3 +966,8 @@ footer .arriba{ position:absolute; left:50%; transform:translateX(-50%); top:-25
   50% { border-color: transparent; }
 }
 
+/* botones al final de cada proyecto (GitHub + volver) */
+.botones-proyecto{ display:flex; flex-wrap:wrap; gap:12px; }
+/* capturas de proyectos con fondo blanco (gráficos) */
+.item .galeria .proyecto img[src*="reporte_ventas"]{ background:#fff; transform:none; }
+
